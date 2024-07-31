@@ -1,7 +1,14 @@
 import React from 'react';
+import FriendsProgress from './FriendsProgress';
 
-const FriendsPage = () => {
-    return <div>Friends Page</div>;
-};
+
+function FriendsPage() {
+    return (
+        <>
+         <FriendsProgress/>
+         
+        </>
+    );
+}
 
 export default FriendsPage;

@@ -1,4 +1,3 @@
-// Sidebar.jsx
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaHome, FaChartLine, FaUsers, FaUser, FaSignOutAlt } from 'react-icons/fa';
@@ -12,7 +11,7 @@ const Sidebar = () => {
     };
 
     return (
-        <div className="h-screen bg-customBlack text-customWhite w-64 flex flex-col p-4">
+        <div className="h-screen bg-customBlack text-customWhite w-64 flex flex-col p-4 fixed">
             <div className="text-2xl font-bold mb-10">LifeQuest</div>
             <nav className="flex flex-col gap-4">
                 <Link to="habits" className="flex items-center gap-2 p-2 hover:bg-customWhite hover:text-customBlack rounded-md">
