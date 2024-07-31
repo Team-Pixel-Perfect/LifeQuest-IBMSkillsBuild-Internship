@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "allowJs": true,
+      "checkJs": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"]
+      },
+      "jsx": "react-jsx",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "skipLibCheck": true
+    },
+    "include": ["src", "LifeQuest-IBMSkillsBuild-Project/src/lib"],
+    "exclude": ["node_modules", "dist"]
+  }
+  
