@@ -1,10 +1,27 @@
+// signin/page.jsx
+import React, { useState } from 'react';
 import { FaGoogle } from "react-icons/fa";
 import { IoLogoGithub } from "react-icons/io5";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { Link, useNavigate  } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SigninPage = () => {
     const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSignIn = (e) => {
+        e.preventDefault();
+
+        // Perform validation or authentication here
+        if (email === 'lifequest@gmail.com' && password === '1234') {
+            // If validation passes, navigate to the dashboard
+            navigate('/dashboard/habits');
+        } else {
+            // Handle errors (e.g., show a message to the user)
+            alert('Please enter both email and password.');
+        }
+    };
 
     return (
         <>
@@ -20,6 +37,9 @@ const SigninPage = () => {
                                     <img src="/logo.png" alt="logo" className="w-20 mx-auto" />
                                 </div>
 
+                                <h1 className="mb-3 text-center text-xl font-bold text-red-600">
+                                    Email: lifequest@gmail.com, Password: 1234
+                                </h1>
                                 <h3 className="mb-3 text-center text-2xl font-bold text-customBlack dark:text-customWhite sm:text-3xl">
                                     Sign in to your account
                                 </h3>
@@ -27,14 +47,14 @@ const SigninPage = () => {
                                     Login to your account for a faster checkout.
                                 </p>
                                 {/* Google Sign In Button */}
-                                <button className="border dark:text-customWhite dark:shadow-md mb-6 flex w-full items-center justify-center rounded-md border bg-[#f8f8f8] dark:bg-[#2C303B] px-6 py-3 text-base text-customBlack outline-none transition-all duration-300 hover:border-customBlack hover:bg-customBlack hover:text-customWhite dark:hover:border-customBlack dark:hover:bg-customBlack dark:hover:text-customWhite">
+                                <button className="border dark:text-customWhite dark:shadow-md mb-6 flex w-full items-center justify-center rounded-md bg-[#f8f8f8] dark:bg-[#2C303B] px-6 py-3 text-base text-customBlack outline-none transition-all duration-300 hover:border-customBlack hover:bg-customBlack hover:text-customWhite dark:hover:border-customBlack dark:hover:bg-customBlack dark:hover:text-customWhite">
                                     <span className="mr-3">
                                         <FaGoogle />
                                     </span>
                                     Sign in with Google
                                 </button>
                                 {/* GitHub Sign In Button */}
-                                <button className="border dark:text-customWhite dark:shadow-md mb-6 flex w-full items-center justify-center rounded-md border bg-[#f8f8f8] dark:bg-[#2C303B] px-6 py-3 text-base text-customBlack outline-none transition-all duration-300 hover:border-customBlack hover:bg-customBlack hover:text-customWhite dark:hover:border-customBlack dark:hover:bg-customBlack dark:hover:text-customWhite">
+                                <button className="border dark:text-customWhite dark:shadow-md mb-6 flex w-full items-center justify-center rounded-md bg-[#f8f8f8] dark:bg-[#2C303B] px-6 py-3 text-base text-customBlack outline-none transition-all duration-300 hover:border-customBlack hover:bg-customBlack hover:text-customWhite dark:hover:border-customBlack dark:hover:bg-customBlack dark:hover:text-customWhite">
                                     <span className="mr-3">
                                         <IoLogoGithub />
                                     </span>
@@ -44,11 +64,11 @@ const SigninPage = () => {
                                 <div className="mb-8 flex items-center justify-center">
                                     <span className="hidden h-[1px] w-full max-w-[70px] bg-customBlack/50 sm:block"></span>
                                     <p className="w-full px-5 text-center text-base font-medium text-customBlack dark:text-customWhite">
-                                        or sigin with your Email
+                                        or sign in with your Email
                                     </p>
                                     <span className="hidden h-[1px] w-full max-w-[70px] bg-customBlack/50 sm:block"></span>
                                 </div>
-                                <form>
+                                <form onSubmit={handleSignIn}>
                                     <div className="mb-8">
                                         <label
                                             htmlFor="email"
@@ -61,6 +81,8 @@ const SigninPage = () => {
                                             name="email"
                                             placeholder="Enter your Email"
                                             className="border w-full rounded-md border-customBlack bg-[#f8f8f8] dark:bg-[#2C303B] px-6 py-3 text-base text-customBlack dark:text-customWhite outline-none transition-all duration-300 focus:border-customGreen dark:focus:border-customGreen"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
                                         />
                                     </div>
                                     <div className="mb-8">
@@ -75,24 +97,26 @@ const SigninPage = () => {
                                             name="password"
                                             placeholder="Enter your Password"
                                             className="border w-full rounded-md border-customBlack bg-[#f8f8f8] dark:bg-[#2C303B] px-6 py-3 text-base text-customBlack dark:text-customWhite outline-none transition-all duration-300 focus:border-customOrange dark:focus:border-customOrange"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
                                         />
                                     </div>
                                     <div className="mb-8 flex flex-col justify-between sm:flex-row sm:items-center">
                                         <div className="mb-4 sm:mb-0">
-                                        <div className="flex items-center">
-                                            <input
-                                                type="checkbox"
-                                                name="checkbox"
-                                                id="checkboxLabelOne"
-                                                className="mr-3 h-5 w-5 accent-primary"
-                                            />
-                                            <label
-                                                htmlFor="checkboxLabelOne"
-                                                className="text-sm font-medium text-body-color"
-                                            >
-                                                Keep me signed in
-                                            </label>
-                                        </div>
+                                            <div className="flex items-center">
+                                                <input
+                                                    type="checkbox"
+                                                    name="checkbox"
+                                                    id="checkboxLabelOne"
+                                                    className="mr-3 h-5 w-5 accent-primary"
+                                                />
+                                                <label
+                                                    htmlFor="checkboxLabelOne"
+                                                    className="text-sm font-medium text-body-color"
+                                                >
+                                                    Keep me signed in
+                                                </label>
+                                            </div>
                                         </div>
                                         <div>
                                             <a
@@ -104,7 +128,7 @@ const SigninPage = () => {
                                         </div>
                                     </div>
                                     <div className="mb-6">
-                                        <button className="flex w-full items-center justify-center rounded-md bg-customGreen px-9 py-4 text-base font-medium text-customWhite duration-300 hover:bg-customGreen/90">
+                                        <button type="submit" className="flex w-full items-center justify-center rounded-md bg-customGreen px-9 py-4 text-base font-medium text-customWhite duration-300 hover:bg-customGreen/90">
                                             Sign in
                                         </button>
                                     </div>

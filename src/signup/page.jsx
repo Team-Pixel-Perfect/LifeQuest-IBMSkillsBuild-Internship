@@ -28,14 +28,14 @@ const SignupPage = () => {
                                 </p>
 
                                 {/* Social Login Buttons */}
-                                <button className="border dark:text-customWhite dark:shadow-md mb-6 flex w-full items-center justify-center rounded-md border bg-[#f8f8f8] dark:bg-[#2C303B] px-6 py-3 text-base text-customBlack outline-none transition-all duration-300 hover:border-customBlack hover:bg-customBlack hover:text-customWhite dark:hover:border-customBlack dark:hover:bg-customBlack dark:hover:text-customWhite">
+                                <button className="border dark:text-customWhite dark:shadow-md mb-6 flex w-full items-center justify-center rounded-md bg-[#f8f8f8] dark:bg-[#2C303B] px-6 py-3 text-base text-customBlack outline-none transition-all duration-300 hover:border-customBlack hover:bg-customBlack hover:text-customWhite dark:hover:border-customBlack dark:hover:bg-customBlack dark:hover:text-customWhite">
                                     <span className="mr-3">
                                         <FaGoogle />
                                     </span>
                                     Sign in with Google
                                 </button>
 
-                                <button className="border dark:text-customWhite dark:shadow-md mb-6 flex w-full items-center justify-center rounded-md border bg-[#f8f8f8] dark:bg-[#2C303B] px-6 py-3 text-base text-customBlack outline-none transition-all duration-300 hover:border-customBlack hover:bg-customBlack hover:text-customWhite dark:hover:border-customBlack dark:hover:bg-customBlack dark:hover:text-customWhite">
+                                <button className="border dark:text-customWhite dark:shadow-md mb-6 flex w-full items-center justify-center rounded-md bg-[#f8f8f8] dark:bg-[#2C303B] px-6 py-3 text-base text-customBlack outline-none transition-all duration-300 hover:border-customBlack hover:bg-customBlack hover:text-customWhite dark:hover:border-customBlack dark:hover:bg-customBlack dark:hover:text-customWhite">
                                     <span className="mr-3">
                                         <IoLogoGithub />
                                     </span>
