@@ -82,21 +82,42 @@ const Habits = () => {
   };
 
   const handleMarkAsDone = (id) => {
-    const completedHabit = habits.find((habit) => habit.id === id);
-    setCompletedHabits([...completedHabits, completedHabit]);
-    setHabits(habits.filter((habit) => habit.id !== id));
-    setProgress((prev) => {
-      const newProgress = { ...prev };
-      delete newProgress[id];
-      return newProgress;
-    });
-
-    // Update streaks
-    setCurrentStreak((prevStreak) => prevStreak + 1);
-    setBestStreak((prevBestStreak) =>
-      Math.max(prevBestStreak, currentStreak + 1)
-    );
+    const habit = habits.find((habit) => habit.id === id);
+  
+    // Update habit completion count
+    if (!habit.completions) {
+      habit.completions = 0;
+    }
+    habit.completions += 1;
+  
+    if (habit.completions >= habit.goal) {
+      setCompletedHabits([habit, ...completedHabits]); // Add to top
+      setHabits(habits.filter((h) => h.id !== id));
+      setProgress((prev) => {
+        const newProgress = { ...prev };
+        delete newProgress[id];
+        return newProgress;
+      });
+  
+      // Update streaks
+      setCurrentStreak((prevStreak) => prevStreak + 1);
+      setBestStreak((prevBestStreak) =>
+        Math.max(prevBestStreak, currentStreak + 1)
+      );
+    } else {
+      // Move a copy of the habit to completed habits with completions incremented by 1
+      const completedHabit = { ...habit, completions: habit.completions };
+      setCompletedHabits([completedHabit, ...completedHabits]); // Add to top
+  
+      // Update the habit in the habits list with updated completions
+      const updatedHabits = habits.map((h) =>
+        h.id === id ? { ...habit, completions: habit.completions } : h
+      );
+      setHabits(updatedHabits);
+    }
   };
+  
+  
 
   useEffect(() => {
     const now = new Date();
