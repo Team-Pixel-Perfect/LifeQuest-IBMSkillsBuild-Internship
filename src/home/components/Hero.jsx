@@ -15,7 +15,7 @@ function Hero() {
     <>
       <section
         id="home"
-        className="relative z-10 overflow-hidden pb-16 pt-[120px] md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px] bg-customWhite dark:bg-customBlack"
+        className="relative z-10 overflow-hidden pb-16 pt-[120px] md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px] bg-customWhite dark:bg-customBlack h-[100vh]"
       >
         <div className="container mx-auto">
           <div className="flex flex-wrap -mx-4">
