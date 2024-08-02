@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Hero() {
   const navigate = useNavigate();
@@ -33,12 +33,12 @@ function Hero() {
                   impact on your life and the planet.
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                <button
+                <Link to={"signin"}><button
                     onClick={handleGetProClick}
                     className="rounded-sm bg-customGreen px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-customGreen/80"
                   >
                     🔥 Get Started
-                  </button>
+                  </button></Link>
                   <button
                     onClick={handleStarOnGitHubClick}
                     className="rounded-sm border border-customOrange px-8 py-4 text-base font-semibold text-customOrange duration-300 ease-in-out hover:bg-customOrange hover:text-white"
