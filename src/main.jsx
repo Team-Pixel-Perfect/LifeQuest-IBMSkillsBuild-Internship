@@ -11,7 +11,7 @@ import StatsPage from './dashboard/Stats/Stats.jsx';
 import FriendsPage from './dashboard/Friends/Friends.jsx';
 import FriendsProgress from './dashboard/Friends/FriendsProgress.jsx'; // Ensure this import is correct
 import Requests from './dashboard/Friends/Requests.jsx';
-import ProfilePage from './dashboard/Profile/Profile.jsx';
+import ProfilePage from './dashboard/Profile/ProfilePage.jsx';
 import './index.css';
 
 const router = createBrowserRouter([
