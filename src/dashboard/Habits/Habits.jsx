@@ -167,7 +167,7 @@ const Habits = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col items-center py-4">
       <div className="w-full p-4 bg-white shadow-lg rounded-lg">
         <h1 className="text-4xl font-bold text-center mb-6">
-          Salut, {"{username}"}
+          Hello, Welcome to LifeQuest
         </h1>
         <div className="flex justify-between items-center mb-6">
           <div
